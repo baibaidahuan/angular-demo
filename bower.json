@@ -1,0 +1,23 @@
+{
+  "name": "angular",
+  "homepage": "https://github.com/baibaidahuan/angular-demo",
+  "authors": [
+    "baibaidahuan"
+  ],
+  "description": "test desc",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "2.0.4",
+    "jquery": "1.8.0",
+    "angular":"1.5.2"
+  }
+}

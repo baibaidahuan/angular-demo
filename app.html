@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>AngularJS内置服务$http的使用</title>
+	<style type="text/css">
+	.item{
+		margin-right: 5px;
+	}
+	</style>
+</head>
+<body ng-app="app">
+	<div ng-controller="MyCtrl">
+		<h2 ng-bind="msg"></h2>
+		<h2>{{msg}}</h2>
+
+		<input type="text" ng-model="id" />
+		<input type="text" ng-model="name" />
+		<button ng-click="addUser()">添加</button>
+		<button ng-click="modifyUser()">修改</button>
+		<button ng-click="delUser()">删除</button>
+	</div>
+	<br><br>
+	<div ng-controller="UserCtrl">
+		<fieldset>
+			<legend>用户角色</legend>
+			<!-- 当前选择绑定 ng-model="curselect"-->
+			<select ng-model="curselect">
+				<option value="">请选择</option>
+				<!-- 使用ng-repeat指令显示用户角色 r是自定义变量 任意取-->
+				<option ng-repeat="r in roles" value="{{r.id}}">{{r.rolename}}</option>
+				<!-- <option>系统管理员</option>
+				<option>总经理</option> -->
+			</select>
+		</fieldset>
+		<fieldset>
+			<legend>用户权限列表</legend>
+			<!-- 使用ng-repeat指令显示用户权限 -->
+			<span class="item" ng-repeat="right in rights">
+				<input id="in" type="checkbox" ng-checked="right.ischecked" /><label for="in">{{right.rightname}}</label>
+			</span>
+			<!-- <span class="item">
+				<input id="in" type="checkbox" /><label for="in">人员管理</label>
+			</span>
+			<span class="item">
+				<input id="in1" type="checkbox" /><label for="in1">项目管理</label>
+			</span>
+			<span class="item">
+				<input id="in2" type="checkbox" /><label for="in2">合同管理</label>
+			</span> -->
+		</fieldset>
+	</div>
+	<br><br>
+	<form>
+		<fieldset>
+			<legend>健康信息</legend>
+			身高：<input type="text" />
+			体重：<input type="text" />
+		</fieldset>
+	</form>
+</body>
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+</html>

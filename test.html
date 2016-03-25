@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>AngularJS 进阶</title>
+	<style type="text/css">
+	.other input{
+		margin: 5px 0;
+		padding: 3px;
+	}
+	</style>
+</head>
+<body ng-app="app">
+	<div ng-controller="FirstCtrl">
+		<input type="text" ng-model="msg" />
+		<h2 ng-bind="msg"></h2>
+	</div>
+	<div ng-controller="NextCtrl">
+		<input type="text" ng-model="msg" />
+		<h2 ng-bind="msg"></h2>
+	</div>
+	<div ng-controller="MyCtrl" class="other">
+		<!-- 1 -->
+		<!-- <input type="text" ng-model="msg" /> -->
+		<!-- <h2>{{reverse()}}</h2> -->
+
+		<!-- 2 -->
+		<input type="text" ng-model="user.uname" /><br>
+		<input type="text" ng-model="user.pwd" />
+		<button ng-click="login()">登录</button>
+		<div ng-show="errormsg.length>0">{{errormsg}}</div>
+	</div>
+	<div ng-controller="">
+		
+	</div>
+</body>
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="js/myctrl.js"></script>
+</html>
