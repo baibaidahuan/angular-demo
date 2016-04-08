@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AngularJS进阶-Directive的使用</title>
+</head>
+<body>
+	<!-- <div ng-app="app">
+		<hello></hello>
+		<div item></div>
+		<div class="jike"></div> -->
+		<!-- <div item class="jike"></div>
+	</div> -->
+	<div ng-app="ezstuff">
+		<span ez-hoverable>我是SPAN</span>
+		<button ez-hoverable>我是BUTTON</button>
+		<div ez-hoverable>我是DIV</div>
+		<textarea>我是TEXTAREA</textarea>
+		<div ng-controller="ezCtrl">
+			<!-- restrict：限制指令的出现位置 -->
+			<ez-customer sb="cj"></ez-customer>
+			<ez-customer sb="bxh"></ez-customer>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="js/Angular_Directive.js"></script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>link:在指令中操作DOM</title>
+	<style>
+		.ez-dialog{
+			border: 1px solid #787878;
+			border-radius:5px;
+			background:#c0c0c0;
+			width:300px;	min-height:200px;}
+		.ez-dialog .header{
+			background:#0000ff;
+			color:#fff;
+			padding:5px;}
+		.ez-dialog .content{
+			padding:10px;};
+	</style>
+</head>
+<body ng-app="ezstuff">
+	<div ng-controller="ezCtrl">
+		Date format: <input ng-model="format"/><hr>
+		Current time: <span ez-current-time="format"></span>
+		<ez-dialog>
+			<p>Check out the contents,{{name}}!</p>
+			<p><button>Ok,I will</button></p>
+		</ez-dialog>
+	</div>
+</body>
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="js/directive_link.js"></script>
+</html>

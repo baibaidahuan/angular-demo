@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Directive与Controller之间的会话</title>
+	<style>
+		.color{
+			background-color: red;
+			font-size: 20px;
+		}
+		.font{
+			color: red;
+		}
+		div.clock{
+			padding: 10px;
+			background-color: #000;
+			color: #0f0;
+			width: 300px;
+		}
+	</style>
+</head>
+<body>
+	<div ng-app="app">
+		<!-- 例一 -->
+		<!-- <div ng-controller="AppCtrl">
+			<div enter="delData()">I`m here</div>
+		</div> -->
+
+		<!-- 例二 -->
+		<!-- <food apple orange banana>所有食物(foods)</food>
+		<br>
+		<food apple orange>所有食物(foods)</food> -->
+
+		<!-- 例三 -->
+		<div enter leave>hello</div>
+		<hello></hello>
+
+		<!-- 例四 -->
+		<ez-clock></ez-clock>
+
+		<!-- 例五 -->
+		<!--使用data属性向指令实现代码传递变量名-->
+		<ez-namecard data="window.sb"></ez-namecard>
+		<br>
+		<!-- 例六 -->
+		<!--在这里显示ezHello实例的内容-->
+		<div id="logger"></div>
+	</div>
+</body>
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="js/Angular_directive2.js"></script>
+</html>

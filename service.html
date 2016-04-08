@@ -3,8 +3,25 @@
 <head>
 	<meta charset="utf-8"/>
 	<title>AngularJS进阶-Services的使用</title>
+	<style>
+		.button{
+			width: 120px;
+		}
+		.tx{
+			width: 80px;
+			height: 80px;
+			margin: 10px 0 10px 50px;
+		}
+		ul li{
+			list-style: none;
+		}
+		.color{
+			color: blue;
+		}
+	</style>
 </head>
 <body ng-app="app">
+	<!-- Services 在多个controller中共享数据 -->
 	<div ng-controller="FCtrl">
 		<input type="text" ng-model="data.msg" />
 		<h3>{{data.msg}}</h3>
@@ -13,6 +30,55 @@
 	<div ng-controller="SCtrl">
 		<input type="text" ng-model="data.msg" />
 		<h3>{{data.msg}}</h3>
+	</div>
+
+	<!-- 常用指令的使用 -->
+	<div ng-controller="UserCtrl">
+		<form action="" name="form" ng-submit="register(user)">
+			<fieldset>
+				<legend>基本信息</legend>
+				<!-- ng-show="user.isShowImg"与ng-hide="user.isShowImg" 结果相反-->
+				<!-- ng-show==ng-if -->
+				<img ng-src="{{user.icon}}" ng-show="user.isShowImg" ng-class="{'tx':user.showicon}" alt="">
+				<div>
+					<input type="text" ng-model="user.uname" placeholder="用户名" required /><br><br>
+					<input type="password" placeholder="密码" /><br><br>
+					职位: <select name="">
+						<option value="">请选择</option>
+						<option ng-selected="user.zw=='1'" value="1">JAVA工程师</option>
+						<option ng-selected="user.zw=='2'" value="2">.NET工程师</option>
+					</select><br><br>
+					性别: <span>
+						<input ng-checked="user.sex=='1'" type="radio" name="sex" id="no" /><label for="no">男</label>
+					</span>
+					<span>
+						<input ng-checked="user.sex=='0'" type="radio" name="sex" id="no1" /><label for="no1">女</label>
+					</span>
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>爱好</legend>
+				<span class="item">
+					<input ng-checked="isChecked(1)" id="in" type="checkbox" /><label for="in">篮球</label>
+				</span>
+				<span class="item">
+					<input ng-checked="isChecked(2)" id="in1" type="checkbox" /><label for="in1">足球</label>
+				</span>
+				<span class="item">
+					<input ng-checked="isChecked(3)" id="in2" type="checkbox" /><label for="in2">排球</label>
+				</span>
+			</fieldset><br>
+			<button ng-disabled="form.$invalid" type="submit" class="button">提交</button>
+		</form>
+	</div>
+
+	<!-- 常用指令ng-repeat的使用 -->
+	<div ng-controller="AddressCtrl">
+		<h4>地址管理:</h4>
+		<ul ng-repeat="a in list" ng-class="{'color':$last}">
+			<!-- $index代表下标值 ng-if="$last"隐藏最后一个 !$last隐藏其他显示最后一个 $first -->
+			<li>{{$index+1+'.'+a.address}}</li>
+		</ul>
 	</div>
 </body>
 <script type="text/javascript" src="bower_components/angular/angular.js"></script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用控制器(controller)封装业务逻辑</title>
+</head>
+<body ng-app="app">
+	<div ng-controller="myController">
+		<!-- <div>name:{{vm.sb.name}}</div>
+		<div>gender : {{vm.sb.gender}}</div>
+		<div>age : {{vm.sb.age}}</div>
+		<div>career : {{vm.sb.career}}</div> -->
+		<div><img ng-src="{{vm.sb.photo}}"></div>
+		<div>
+			<label for="">name:<span ng-bind="vm.sb.name"></span></label>
+		</div>
+		<div>
+			<label for="">gender:<span ng-bind="vm.sb.gender"></span></label>
+		</div>
+		<div>
+			<label for="">age:<span ng-bind="vm.sb.age"></span></label>
+		</div>
+		<div>
+			<label for="">career:<span ng-bind="vm.sb.career"></span></label>
+		</div>
+		<button ng-click="vm.shuffle();">随机</button>
+	</div>
+</body>
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="js/hz_controller.js"></script>
+</html>

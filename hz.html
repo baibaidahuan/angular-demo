@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>启动引导过程</title>
+</head>
+<body>
+	<!-- 自动引导启动框架 ng-app -->
+	<!-- <div ng-app="ezstuff">
+		<p>自动引导启动框架看到一幅动画</p>
+		<ez-duang></ez-duang>
+	</div>
+	<br><br> -->
+	<!-- 手工引导启动框架 angular.bootstrap() -->
+	<!-- <div>
+		<p>手工引导启动框架点击按钮看到一幅动画</p>
+		<button id="btn">手动引导</button>
+		<ez-duang></ez-duang>
+	</div> -->
+	
+	<div ng-app="ezstuff">
+		<p>应该在下面看到一幅动画才对！</p>
+		<ez-play></ez-play>
+	</div>
+</body>
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="js/hz.js"></script>
+</html>

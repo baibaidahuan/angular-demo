@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用过滤器转化输出</title>
+</head>
+<body ng-app="ezstuff">
+	<!-- <div ng-controller="ezCtrl">
+		Total salary(工资总额) is {{total|number:2|currency}}
+		
+		abc:{{abc}}
+		<hr>
+		abcd:{{aa}}
+		<hr>
+		Total salary(工资总额) is {{total}}
+	</div> -->
+
+	<div ng-init="text='just a demo!'">
+		<p>{{text|ezUC}}</p>
+		<p>{{text|ezUC:true}}</p>
+	</div>
+	
+</body>
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript" src="js/hz_filter.js"></script>
+</html>

@@ -2,7 +2,6 @@ angular.module('app',[])
 //$http实现对数据的增删改
 .controller('MyCtrl',function($scope,$http){
 	$scope.msg="hello";
-
 	//get发送请求  resp==data
 	// $http.get('http://192.168.1.125:9098/user/getUsers') //请求后台端口
 	// .success(function(resp){
@@ -43,6 +42,7 @@ angular.module('app',[])
 	}
 })
 
+//用户角色权限实例
 .controller('UserCtrl',function($scope){
 	$scope.roles=[];
 	$scope.rights=[];
