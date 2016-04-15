@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular_demo</title>
+</head>
+<body>
+	<h3>Angular JS Sample Application</h3>
+	<div ng-app="mainApp" ng-controller="CalcController">
+		<p>Enter a number: <input type="number" ng-model="number">
+			<button ng-click="square()">X<sup>2</sup></button>
+		</p>
+		<p>Result:{{result}}</p>
+	</div>
+</body>
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript">
+	var mainApp=angular.module("mainApp",[]);
+	mainApp.controller('CalcController',function($scope,CalcService){
+		$scope.square=function(){
+			$scope.result=CalcService.square($scope.number);
+		}	
+	})
+	mainApp.factory('MathService',function(){
+		var factory={};
+		factory.multiply=function(a,b){
+			return a*b
+		}
+		return factory;
+	});
+	mainApp.service('CalcService',function(MathService){
+		this.square=function(a){
+			return MathService.multiply(a,a);
+		}
+	});
+</script>
+</html>

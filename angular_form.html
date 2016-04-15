@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/docs/assets/css/bootstrap.css">
+	<style>
+		body{padding: 30px;}
+		p.help-block{
+			color: #f00;
+		}
+	</style>
+</head>
+<body ng-app="validationApp" ng-controller="mainController">
+	<div class="container">
+		<div class="col-sm-8 col-sm-offset-2">
+			<!-- Page Header -->
+			<div class="page-header">
+				<h2>AngularJS Form Validation</h2>
+			</div>
+			<!-- Form --> <!-- novalidate prevents HTML5 validation since we will be validating ourselves -->
+			<form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+				<div class="form-group" ng-class="{'has-error':userForm.name.$invalid && !userForm.name.$pristine}">
+					<label for="">*name</label>
+					<input type="text" name="name" class="form-control" ng-model="name" required>
+					<p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">You name is required.</p>
+				</div>
+				<div class="form-group" ng-class="{'has-error':userForm.username.$invalid && !userForm.username.$pristine}">
+					<label for="">Username</label>
+					<input type="text" name="username" class="form-control" ng-model="user.username" ng-minlength="3" ng-maxlength="8">
+					<p ng-show="userForm.username.$error.minlength" class="help-block">Username is too short.</p>
+        			<p ng-show="userForm.username.$error.maxlength" class="help-block">Username is too long.</p>
+				</div>
+				<div class="form-group" ng-class="{'has-error':userForm.email.$invalid && !userForm.email.$pristine}">
+					<label for="">Email</label>
+					<input type="email" name="email" class="form-control" ng-model="email">
+					<p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+				</div>
+				<button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Submit</button>
+			</form>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+<script type="text/javascript">
+	var validationApp=angular.module('validationApp', []);
+    validationApp.controller('mainController', function($scope) {
+        $scope.submitForm = function(isValid) {
+            if (isValid) {
+                alert('验证成功');
+            }
+        };
+    });
+</script>
+</html>

@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.tab-content{
+    .tab-pane{
+      display: none;
+      padding-top: 40px;
+    }
+    div.active{
+      display: block;
+    }
+  }
